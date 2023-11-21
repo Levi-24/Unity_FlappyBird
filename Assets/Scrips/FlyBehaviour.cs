@@ -7,7 +7,6 @@ public class FlyBehaviour : MonoBehaviour
 {
     [SerializeField] private float _velocity = 1.5f;
     [SerializeField] private float _rotationSpeed = 10f;
-
     private Rigidbody2D _rigidbody2;
 
     private void Start()
