@@ -7,23 +7,23 @@ public class FlyBehaviour : MonoBehaviour
 {
     [SerializeField] private float _velocity = 1.5f;
     [SerializeField] private float _rotationSpeed = 10f;
-    private Rigidbody2D _rigidbody2;
+    private Rigidbody2D _rigidbody2D;
 
     private void Start()
     {
-        _rigidbody2 = GetComponent<Rigidbody2D>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            _rigidbody2.velocity = Vector2.up * _velocity;
+            _rigidbody2D.velocity = Vector2.up * _velocity;
         }
     }
 
     private void FixedUpdate()
     {
-        transform.rotation = Quaternion.Euler(0, 0, _rigidbody2.velocity.y * _rotationSpeed);
+        transform.rotation = Quaternion.Euler(0, 0, _rigidbody2D.velocity.y * _rotationSpeed);
     }
 }
